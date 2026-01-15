@@ -1,18 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import Login from "./pages/Login"
-import RecipeDetail from "./pages/RecipeDetail"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import RecipeDetail from "./pages/RecipeDetail";
+import NewRecipe from "./pages/NewRecipe";
+import Profile from "./pages/Profile";
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
+        <Route path="/new" element={<NewRecipe />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
-    </Router>
-  )
+    </BrowserRouter>
+  );
 }
-
-export default App
